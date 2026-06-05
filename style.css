@@ -1,0 +1,95 @@
+/* Estilos Generales (Modo Oscuro para ahorrar batería y verse pro) */
+body {
+    background-color: #121824;
+    color: #ffffff;
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Contenedor Principal */
+.faucet-container {
+    max-width: 500px;
+    margin: 0 auto; /* Centra todo en la pantalla */
+}
+
+/* Títulos */
+h1 {
+    color: #00ffcc; /* Color verde/azul cripto llamativo */
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+/* Cajas de Anuncios (Gris oscuro para que resalten los banners reales después) */
+.ad-banner-top, .ad-banner-bottom {
+    background-color: #1e2640;
+    border: 1px dashed #00ffcc;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 8px;
+}
+
+.ad-placeholder {
+    color: #8a99ad;
+    font-size: 14px;
+    margin: 0;
+}
+
+/* Tarjeta Central del Reclamo */
+.faucet-box {
+    background-color: #1a2236;
+    border: 2px solid #233050;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Balance y Temporizador */
+#user-balance {
+    font-size: 36px;
+    color: #ffffff;
+    margin: 10px 0;
+}
+
+#user-balance span {
+    font-size: 18px;
+    color: #00ffcc;
+    margin-left: 5px;
+}
+
+.timer-display {
+    background-color: #111726;
+    padding: 10px;
+    border-radius: 6px;
+    font-weight: bold;
+    color: #ffcc00;
+    margin-bottom: 20px;
+}
+
+/* Botón de Reclamar */
+.btn.primary {
+    background-color: #00ffcc;
+    color: #121824;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    transition: 0.2s;
+}
+
+/* Efecto cuando pasas el ratón por encima del botón */
+.btn.primary:hover {
+    background-color: #00cc99;
+    box-shadow: 0px 0px 10px #00ffcc;
+}
+
+/* Pie de página */
+footer {
+    margin-top: 30px;
+    font-size: 12px;
+    color: #62728d;
+}

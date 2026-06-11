@@ -1,55 +1,72 @@
-// 1. Variables para controlar el estado de la Faucet
-let balance = 0.0000;
-let tiempoRestante = 300; // 5 minutos en segundos
-let contadorIntervalo;
+//==============================
+//CONFIGURACI覰 DE LA FAUCET
+//===============================
 
-// 2. Capturar los elementos del HTML para poder cambiarlos
-const botonReclamar = document.getElementById('claim-btn');
-const textoBalance = document.getElementById('user-balance');
-const textoTemporizador = document.getElementById('timer-text');
+//REMPLAZA ESTE ENLACE con tu enlace directo (DIRECT LINK) real Adstrra
+const ADSTERRA_DIRECT_LINK="<script src="https://pl29643268.effectivecpmnetwork.com/a9/07/5f/a9075fd11c1f62df42160106d8bfd62b.js"></script>
+";
+console.log(ADSTERRA_DIRECT_LINK);
 
-// 3. Funci贸n principal del Reclamo
-botonReclamar.addEventListener('click', () => {
-    // Sumar recompensa al balance
-    balance += 0.0005;
-    // Actualizar el texto en la pantalla (fijando a 4 decimales)
-    textoBalance.innerHTML = `${balance.toFixed(4)} <span>USDT</span>`;
-    
-    // Desactivar el bot贸n para que no sigan haciendo clic
-    botonReclamar.disabled = true;
-    botonReclamar.style.opacity = "0.5";
-    botonReclamar.style.cursor = "not-allowed";
-    
-    // Iniciar la cuenta regresiva
-    tiempoRestante = 300; // Reiniciar los 5 minutos
-    iniciarTemporizador();
+//Variable de  estado
+let balance= 0.0000;
+let tiempoRestante = 300;// 5 minutos en segundos
+let reloj;
+
+//captura de elementos de Html
+
+const botonReclamar= document.getElementById("claim-btn");
+const textoBalance =document.getElementById("user-balance");
+const textoReloj= document.getElementById("timer-text");
+
+//======================================
+//L覩ICA PRINCIPAL
+//====================================
+
+//funci髇  que se ejecuta cuando el usuario le da click al bot髇 dereclamar    
+botonReclamar.addEventListener("click", () => {
+	// 1. abril el anuncio de 	Adsterra en una  nueva pesta馻
+window.open(ADSTERRA_DIRECT_LINK,"_blank");
+
+//2 sumar la recompensa al balance  temporal  en pantalla
+   balance += 0.0005;
+   textoBalance.textContent = balance.toFixed(4); // Muestra 4 decimales : 0.0005;
+   
+  //3. Desactivar el bot髇 para que no siga haciendo clik
+   botonReclamar.disabled = true;
+   botonReclamar.style.backgroundColor = "#666" ; // lo pone en gris visual mente
+   
+   //4.  Iniciar la cuenta regresiva de 5 minutos
+   tiempoRestante=300;
+   actualizarpantallaReloj();
+   
+   //Arrancamos el  temporizador para que reste 1 segundo cada segundo
+   reloj= setInterval(() =>{
+	   tiempoRestante--;
+	   actualizarpantallaReloj();
+	// si el tiempo llega  a cero , detenemos el reloj  y liberamos el bot髇
+	   if(tiempoRestante <= 0){
+		clearInterval(reloj);
+		botonReclamar.disabled=false;
+		botonReclamar.style.backgroundColor =""; //Devuelve su color morado original
+		textoReloj.textContent ="isto para reclamar!";
+         
+	   }//linea cerral
+   },
+ 1000);
 });
+	//function de bajo de nuestro codigo
+	function actualizarpantallaReloj() {
+		
+		const minutos= Math.floor(tiempoRestante / 60);
+		const segundos=tiempoRestante % 60;
+		const segundosFormateados= segundos < 10 ? "0" + segundos: segundos;
+		textoReloj.textContent=`Espera: ${minutos}:${segundosFormateados}`; 	
+	}
+	
 
-// 4. Funci贸n que maneja el reloj (cuenta regresiva)
-function iniciarTemporizador() {
-    // Ejecutar esta l贸gica cada 1 segundo
-    contadorIntervalo = setInterval(() => {
-        tiempoRestante--;
 
-        // Calcular minutos y segundos restantes
-        let minutos = Math.floor(tiempoRestante / 60);
-        let segundos = tiempoRestante % 60;
 
-        // Formatear los segundos para que siempre tengan dos d铆gitos (ej: 05 en vez de 5)
-        if (segundos < 10) segundos = "0" + segundos;
 
-        // Mostrar el tiempo en la pantalla
-        textoTemporizador.innerText = `Pr贸ximo reclamo en: ${minutos}:${segundos}`;
 
-        // Cuando el tiempo llegue a cero
-        if (tiempoRestante <= 0) {
-            clearInterval(contadorIntervalo); // Detener el reloj
-            textoTemporizador.innerText = "隆Listo para reclamar!";
-            
-            // Reactivar el bot贸n
-            botonReclamar.disabled = false;
-            botonReclamar.style.opacity = "1";
-            botonReclamar.style.cursor = "pointer";
-        }
-    }, 1000);
-}
+
+

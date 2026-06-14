@@ -1,10 +1,10 @@
 //==============================
-//CONFIGURACI覰 DE LA FAUCET
+//CONFIGURACI脫N DE LA FAUCET
 //===============================
 
 //REMPLAZA ESTE ENLACE con tu enlace directo (DIRECT LINK) real Adstrra
 const ADSTERRA_DIRECT_LINK="https://pl29643268.effectivecpmnetwork.com/a9/07/5f/a9075fd11c1f62df42160106d8bfd62b.js";
-console.log(ADSTERRA_DIRECT_LINK);
+
 
 //Variable de  estado
 let balance= 0.0000;
@@ -18,19 +18,19 @@ const textoBalance =document.getElementById("user-balance");
 const textoReloj= document.getElementById("timer-text");
 
 //======================================
-//L覩ICA PRINCIPAL
+//L脫GICA PRINCIPAL
 //====================================
 
-//funci髇  que se ejecuta cuando el usuario le da click al bot髇 dereclamar    
+//funci贸n  que se ejecuta cuando el usuario le da click al bot贸n dereclamar    
 botonReclamar.addEventListener("click", () => {
-	// 1. abril el anuncio de 	Adsterra en una  nueva pesta馻
+	// 1. abril el anuncio de 	Adsterra en una  nueva pesta帽a
 window.open(ADSTERRA_DIRECT_LINK,"_blank");
 
 //2 sumar la recompensa al balance  temporal  en pantalla
    balance += 0.0005;
    textoBalance.textContent = balance.toFixed(4); // Muestra 4 decimales : 0.0005;
    
-  //3. Desactivar el bot髇 para que no siga haciendo clik
+  //3. Desactivar el bot贸n para que no siga haciendo clik
    botonReclamar.disabled = true;
    botonReclamar.style.backgroundColor = "#666" ; // lo pone en gris visual mente
    
@@ -42,16 +42,16 @@ window.open(ADSTERRA_DIRECT_LINK,"_blank");
    reloj= setInterval(() =>{
 	   tiempoRestante--;
 	   actualizarpantallaReloj();
-	// si el tiempo llega  a cero , detenemos el reloj  y liberamos el bot髇
+	// si el tiempo llega  a cero , detenemos el reloj  y liberamos el bot贸n
 	   if(tiempoRestante <= 0){
 		clearInterval(reloj);
 		botonReclamar.disabled=false;
 		botonReclamar.style.backgroundColor =""; //Devuelve su color morado original
-		textoReloj.textContent ="isto para reclamar!";
+		textoReloj.textContent ="隆Listo para reclamar!";
          
 	   }//linea cerral
-   },
- 1000);
+   }
+},1000);
 });
 	//function de bajo de nuestro codigo
 	function actualizarpantallaReloj() {
@@ -63,10 +63,3 @@ window.open(ADSTERRA_DIRECT_LINK,"_blank");
 		textoReloj.textContent=`por Favor Espera: ${minutos}:${segundosFormateados}`; 	
 	}
 	
-
-
-
-
-
-
-

@@ -3,8 +3,7 @@
 //===============================
 
 //REMPLAZA ESTE ENLACE con tu enlace directo (DIRECT LINK) real Adstrra
-const ADSTERRA_DIRECT_LINK="<script src="https://pl29643268.effectivecpmnetwork.com/a9/07/5f/a9075fd11c1f62df42160106d8bfd62b.js"></script>
-";
+const ADSTERRA_DIRECT_LINK="https://pl29643268.effectivecpmnetwork.com/a9/07/5f/a9075fd11c1f62df42160106d8bfd62b.js";
 console.log(ADSTERRA_DIRECT_LINK);
 
 //Variable de  estado
@@ -59,8 +58,9 @@ window.open(ADSTERRA_DIRECT_LINK,"_blank");
 		
 		const minutos= Math.floor(tiempoRestante / 60);
 		const segundos=tiempoRestante % 60;
+		//Agrega  un cero a la izquierda si los segundos son menores a 10
 		const segundosFormateados= segundos < 10 ? "0" + segundos: segundos;
-		textoReloj.textContent=`Espera: ${minutos}:${segundosFormateados}`; 	
+		textoReloj.textContent=`por Favor Espera: ${minutos}:${segundosFormateados}`; 	
 	}
 	
 

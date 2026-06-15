@@ -46,7 +46,7 @@ botonReclamar.addEventListener("click", () => {
 	if(tiempoRestante <=0) {
 		clearInterval(reloj);
 		botonReclamar.disabled =false;
-		botonReclamar.style.backgroundColor='";
+		botonReclamar.style.backgroundColor="";
 	textoReloj.textContent= "Listo para reclamar";	
 	} // Este cierra el if
 	

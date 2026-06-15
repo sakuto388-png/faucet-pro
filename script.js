@@ -20,7 +20,7 @@ const textoReloj=document.getElementById("timer-text");
 
 //=================================
 //Lógica principal
-=======================================
+//=======================================
 //función que se ejecuta cuando el usuario le da click al boton de reclamar
 botonReclamar.addEventListener("click", () => {
 	//1. abril el anuncio de adsterra en una nueva pestaña

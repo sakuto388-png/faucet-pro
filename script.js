@@ -3,7 +3,7 @@
 //======================================
 
 //REEMPLAZA ESTE ENLACE con tu enlace directo(DIRECT_ LINK) REAL DE ADSTERRA
-const ADSTERRA_DIRECT_LINK="https://pl29643268.effectivecpmnetwork.com/a9/07/5f/a9075fd11c1f62df42160106d8bfd62b.js";
+const ADSTERRA_DIRECT_LINK="https://www.effectivecpmnetwork.com/vk43y5x1u?key=a38d963c2dccd7af95d5da9f6fc1ecd3";
 
 //variable de estado
 let balance = 0.0000; //Arranque en cero 4 decimales

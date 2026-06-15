@@ -27,7 +27,7 @@ botonReclamar.addEventListener("click", () => {
 	window.open(ADSTERRA_DIRECT_LINK,"_blank");
 	
 	//2. sumar la recompensa al balance temporal en pantalla
-	balance= += 0.0005;
+	balance+= 0.0005;
 	textoBalance.textContent= balance.toFixed(4)//Muestra 4 decimales
 	
 	//3. Desactiva el  boton para que no haciendo clik
